@@ -4,6 +4,7 @@
 # This program will ask the user to prompt a mass
 # and acceleration to calculate the net force.
 
+
 # def function is where we add the formula for Fnet.
 def calc_Fnet(mass, acceleration):
     force = mass * acceleration
@@ -28,17 +29,13 @@ def main():
         if falling_object in ["yes", "no"]:
             if falling_object == "yes":
                 acceleration = 9.8
-                print(
-                    "Acceleration is 9.8 m/s². Since your object is free falling."
-                )
+                print("Acceleration is 9.8 m/s². Since your object is free falling.")
                 break
             else:
                 # If object not free falling, ask user to enter the acceleration.
                 while True:
                     try:
-                        acceleration = float(
-                            input("Enter an acceleration (m/s²): ")
-                        )
+                        acceleration = float(input("Enter an acceleration (m/s²): "))
                         break
                     except ValueError:
                         print("Invalid. Please enter a valid acceleration: ")
