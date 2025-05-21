@@ -12,28 +12,33 @@ def calc_Fnet(mass, acceleration):
 
 def main():
     acceleration = 0
-# Get prompt from user for a mass.
+    # Get prompt from user for a mass.
     while True:
         try:
             mass = float(input("Enter a positive mass (Kg): "))
             if mass <= 0:
                 print("Enter a positive mass: ")
-            break
+            else:
+                break
         except ValueError:
             print("Invalid. Please enter a valid mass: ")
-# Get prompt from user for acceleration
+    # Get prompt from user for acceleration
     while True:
         falling_object = input("Is the object falling {yes or no}: ")
-        if falling_object == "yes" or falling_object == "no":
+        if falling_object in ["yes", "no"]:
             if falling_object == "yes":
                 acceleration = 9.8
-                print("Acceleration is 9.8 m/s². Since your object is free falling.")
+                print(
+                    "Acceleration is 9.8 m/s². Since your object is free falling."
+                )
                 break
             else:
-                # If object not free falling ask user to enter the acceleration.
+                # If object not free falling, ask user to enter the acceleration.
                 while True:
                     try:
-                        acceleration = float(input("Enter an acceleration (m/s²): "))
+                        acceleration = float(
+                            input("Enter an acceleration (m/s²): ")
+                        )
                         break
                     except ValueError:
                         print("Invalid. Please enter a valid acceleration: ")
